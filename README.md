@@ -1,6 +1,6 @@
 # SmsManager
 
-A Ruby SDK for smsmanager.cz - SMS provider.
+A Ruby SDK for [smsmanager.cz](http://smsmanager.cz/) - SMS provider.
 
 ## Installation
     gem install sms_manager
