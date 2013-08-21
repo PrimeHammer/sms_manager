@@ -12,7 +12,9 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Ruby SDK for smsmanager.cz API}
   gem.summary       = %q{SmsManager is a Ruby library for sending SMS messages by smsmanager.cz provider}
   gem.homepage      = "https://github.com/dayweek/sms_manager"
-
+  gem.add_dependency  "httpclient", "~> 2.3.4.0"
+  gem.add_development_dependency "bundler", "~> 1.3"
+  gem.add_development_dependency "rake"
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
