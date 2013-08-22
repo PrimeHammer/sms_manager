@@ -1,4 +1,5 @@
 require "sms_manager/error/sending_error"
+require "httpclient"
 
 module SmsManager
 
