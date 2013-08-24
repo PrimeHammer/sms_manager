@@ -13,8 +13,11 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{SmsManager is a Ruby library for sending SMS messages by smsmanager.cz provider}
   gem.homepage      = "https://github.com/dayweek/sms_manager"
   gem.add_dependency  "httpclient", "~> 2.3.4.0"
-  gem.add_development_dependency "bundler", "~> 1.3"
+  gem.add_development_dependency "bundler"
   gem.add_development_dependency "rake"
+  gem.add_development_dependency "rspec"
+  gem.add_development_dependency "vcr"
+  gem.add_development_dependency "webmock", "~> 1.7.0" #required by webmock
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
