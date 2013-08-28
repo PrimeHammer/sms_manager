@@ -15,7 +15,7 @@ module SmsManager
       }
       body = HTTPClient.get('http://http-api.smsmanager.cz/Send', options).body
       unless body =~ /^OK/
-        raise SendingError, "Sending text '#{options[:message]}' to phone '#{options[:number]}' failed"
+        raise SendingError.new(options, body)
       end
       nil
     end

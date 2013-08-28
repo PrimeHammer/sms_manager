@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'spec_helper.rb'
 
 describe SmsManager do
@@ -22,13 +23,17 @@ describe SmsManager do
         expect { SmsManager.send_message number: '+420605348034', message: 'Hello!' }.not_to raise_error
       end
     end
-    it "should raise exception with invalid credentials" do
+    it "should raise exception with code and message" do
       SmsManager.configure do |config|
         config.username = "U"
         config.hashed_password = "H"
       end
       VCR.use_cassette('valid') do
-        expect { SmsManager.send_message number: '+420123456789', message: 'Hello!' }.to raise_error(SmsManager::SendingError)
+        expect { SmsManager.send_message number: '+420123456789', message: 'Hello!' }.to \
+          raise_error(SmsManager::SendingError)  do |e|
+            expect(e.code).to eq(103)
+            expect(e.message).to eq("Neplatné uživatelské jméno nebo heslo")
+          end
       end
     end
   end
