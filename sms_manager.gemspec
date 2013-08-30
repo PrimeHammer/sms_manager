@@ -13,6 +13,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{SmsManager is a Ruby library for sending SMS messages by smsmanager.cz provider}
   gem.homepage      = "https://github.com/dayweek/sms_manager"
   gem.add_dependency  "httpclient", "~> 2.3.4.0"
+  gem.add_dependency  "activemodel", "~> 4.0.0"
   gem.add_development_dependency "bundler"
   gem.add_development_dependency "rake"
   gem.add_development_dependency "rspec"

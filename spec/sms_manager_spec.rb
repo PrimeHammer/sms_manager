@@ -36,5 +36,24 @@ describe SmsManager do
           end
       end
     end
+    it "should raise exception with invalid params" do
+      SmsManager.configure do |config|
+        config.username = "a"
+        config.hashed_password = "a"
+      end
+      expect { SmsManager.send_message number: " ", message: "aa"}.\
+        to raise_error(SmsManager::ConfigurationError)
+    end
+  end
+
+  describe 'sending paramaters validations' do
+    before(:each) do
+      @default_params = { username: 'a', password: 'b', number: '123', message: 'hello' }
+    end
+
+    it "should be valid for username, password, number, message, otherwise not" do
+      expect(SendParams.new(@default_params).valid?).to be_true
+      expect(SendParams.new(username: 'a').valid?).to be_false
+    end
   end
 end
