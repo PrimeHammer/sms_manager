@@ -1,5 +1,9 @@
 # SmsManager
 
+[![Gem Version](https://badge.fury.io/rb/sms_manager.png)][gem]
+[![Dependency Status](https://gemnasium.com/dayweek/sms_manager.png)](https://gemnasium.com/dayweek/sms_manager)
+[![Code Climate](https://codeclimate.com/github/dayweek/sms_manager.png)](https://codeclimate.com/github/dayweek/sms_manager)
+
 A Ruby SDK for [smsmanager.cz](http://smsmanager.cz/) - SMS provider.
 
 ## Installation
