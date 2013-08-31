@@ -1,6 +1,6 @@
 # SmsManager
 
-[![Gem Version](https://badge.fury.io/rb/sms_manager.png)][gem]
+[![Gem Version](https://badge.fury.io/rb/sms_manager.png)](http://badge.fury.io/rb/sms_manager)
 [![Dependency Status](https://gemnasium.com/dayweek/sms_manager.png)](https://gemnasium.com/dayweek/sms_manager)
 [![Code Climate](https://codeclimate.com/github/dayweek/sms_manager.png)](https://codeclimate.com/github/dayweek/sms_manager)
 
