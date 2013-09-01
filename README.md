@@ -49,13 +49,13 @@ SmsManager.send_message number: '+420123456789', message: 'Hello!'
 
 You can pass all the parameters available at [SmsManager API](http://smsmanager.cz/api/http/). However these additional parameters will not be validated and will be appended to the request:
 
-```
+```ruby
 SmsManager.send_message number: '+420123456789', message: 'Hello!', gateway: 'lowcost', time: '2013-01-01T23:59:59'
 ```
 
 If the service fails an exception is raised. The exception contains error code as well as error message.
 
-```
+```ruby
 begin
   SmsManager.send_message number: '+420123456789', message: 'Hello!'
 rescue SmsManager::SendingError => e
