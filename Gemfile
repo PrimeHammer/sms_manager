@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in foodie.gemspec
+gem "rake"
+gem "rspec"
+gem "webmock"
+gem "coveralls"
+gem "simplecov"
+
+# Specify your gem's dependencies in gemspec
 gemspec

@@ -1,24 +1,24 @@
-require 'sms_manager/configurable'
-require "sms_manager/client"
+require 'sms_manager/error/sending_error'
+require 'httpclient'
 
 module SmsManager
   class << self
-    include Configurable
+    attr_writer :username, :hashed_password
 
-    # delegate calls to client
-    def client
-      return @client if instance_variable_defined?(:@client)
-      @client = SmsManager::Client.new
+    def configure
+      yield self
     end
 
-    def method_missing(method_name, *args, &block)
-      return super unless respond_to_missing?(method_name)
-      client.send(method_name, *args, &block)
+    # options should be { number: String, message: String }
+    def send(options = {})
+      options = {
+        username: SmsManager.instance_variable_get(:@username),
+        password: SmsManager.instance_variable_get(:@hashed_password),
+        number: options[:number],
+        message: options[:message]
+      }
+      body = HTTPClient.get('http://http-api.smsmanager.cz/Send', options).body
+      raise SendingError.new(options, body) unless body =~ /^OK/
     end
-
-    def respond_to_missing?(method_name, include_private=false)
-      client.respond_to?(method_name, include_private)
-    end
-
   end
 end

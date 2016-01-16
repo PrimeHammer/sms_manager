@@ -1,8 +1,5 @@
-# encoding: utf-8
-
 module SmsManager
-  class SendingError < ::Exception
-
+  class SendingError < StandardError
     attr_reader :options, :code
 
     def initialize(options, body)
@@ -11,7 +8,7 @@ module SmsManager
     end
 
     def message
-      if code.between(900,999)
+      if code >= 900 && code <= 999
         CODE_9XX
       elsif CODES[code]
         CODES[code]

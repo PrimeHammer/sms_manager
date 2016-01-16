@@ -1,18 +1,9 @@
+require 'webmock/rspec'
+require 'simplecov'
+require 'coveralls'
 require 'sms_manager'
-require 'vcr'
 
-RSpec.configure do |config|
-  # Use color in STDOUT
-  config.color_enabled = true
+SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter, Coveralls::SimpleCov::Formatter]
+SimpleCov.start
 
-  # Use color not only in STDOUT but also in pagers and files
-  config.tty = true
-
-  # Use the specified formatter
-  config.formatter = :documentation # :progress, :html, :textmate, :documentation
-end
-
-VCR.config do |c|
-  c.cassette_library_dir = 'fixtures/vcr_cassettes'
-  c.stub_with :webmock
-end
+WebMock.disable_net_connect!
