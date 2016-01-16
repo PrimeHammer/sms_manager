@@ -6,7 +6,7 @@ require 'sms_manager/version'
 Gem::Specification.new do |gem|
   gem.name          = "sms_manager"
   gem.version       = SmsManager::Version
-  gem.date          = '2013-08-07'
+  gem.date          = '2016-01-16'
   gem.authors       = ["David Hrachovy"]
   gem.email         = ["david.hrachovy@gmail.com"]
   gem.description   = %q{Ruby SDK for smsmanager.cz API}

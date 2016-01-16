@@ -20,5 +20,9 @@ module SmsManager
       body = HTTPClient.get('http://http-api.smsmanager.cz/Send', options).body
       raise SendingError.new(options, body) unless body =~ /^OK/
     end
+
+    def send_message(options = {})
+      send options
+    end
   end
 end

@@ -50,7 +50,7 @@ If the service fails an exception is raised. The exception contains error code a
 
 ```ruby
 begin
-  SmsManager.send_message number: '+420123456789', message: 'Hello!'
+  SmsManager.send number: '+420123456789', message: 'Hello!'
 rescue SmsManager::SendingError => e
   puts e.code # => 104
   puts e.message # => Neplatný parametr gateway
