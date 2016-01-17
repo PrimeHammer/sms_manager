@@ -30,14 +30,22 @@ describe SmsManager do
       stub_send.to_return body: 'ERROR|103'
 
       expect { SmsManager.send number: '+420123456789', message: 'Hello!' }.to \
-        raise_error(SmsManager::SendingError) do |e|
-          expect(e.code).to eq(103)
+        raise_error(SmsManager::Error) do |e|
           expect(e.message).to eq('Neplatné uživatelské jméno nebo heslo')
+        end
+    end
+
+    it 'raises SmsManager error if HTTP request fails' do
+      expect(HTTPClient).to receive(:get).and_raise HTTPClient::ConnectTimeoutError.new('oops')
+
+      expect { SmsManager.send number: '+420123456789', message: 'Hello!' }.to \
+        raise_error(SmsManager::Error) do |e|
+          expect(e.message).to eq('oops')
         end
     end
   end
 
-  describe 'send' do
+  describe 'send message' do
     before do
       SmsManager.configure do |config|
         config.username = 'david@example.com'
@@ -56,9 +64,17 @@ describe SmsManager do
       stub_send.to_return body: 'ERROR|103'
 
       expect { SmsManager.send_message number: '+420123456789', message: 'Hello!' }.to \
-        raise_error(SmsManager::SendingError) do |e|
-          expect(e.code).to eq(103)
+        raise_error(SmsManager::Error) do |e|
           expect(e.message).to eq('Neplatné uživatelské jméno nebo heslo')
+        end
+    end
+
+    it 'raises SmsManager error if HTTP request fails' do
+      expect(HTTPClient).to receive(:get).and_raise HTTPClient::ConnectTimeoutError.new('oops')
+
+      expect { SmsManager.send_message number: '+420123456789', message: 'Hello!' }.to \
+        raise_error(SmsManager::Error) do |e|
+          expect(e.message).to eq('oops')
         end
     end
   end

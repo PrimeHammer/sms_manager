@@ -17,8 +17,12 @@ module SmsManager
         number: options[:number],
         message: options[:message]
       }
-      body = HTTPClient.get('http://http-api.smsmanager.cz/Send', options).body
-      raise SendingError.new(options, body) unless body =~ /^OK/
+      begin
+        body = HTTPClient.get('http://http-api.smsmanager.cz/Send', options).body
+      rescue StandardError => e
+        raise Error.new(e.message)
+      end
+      raise SendingError.new(body) unless body =~ /^OK/
     end
 
     def send_message(options = {})

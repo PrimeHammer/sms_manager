@@ -1,13 +1,15 @@
-module SmsManager
-  class SendingError < StandardError
-    attr_reader :options, :code
+require 'sms_manager/error/error'
 
-    def initialize(options, body)
-      @code = body.split('|').last.to_i
-      @options = options
+module SmsManager
+  class SendingError < Error
+    def initialize(body)
+      code = body.split('|').last.to_i
+      super code_to_message(code)
     end
 
-    def message
+    private
+
+    def code_to_message(code)
       if code >= 900 && code <= 999
         CODE_9XX
       elsif CODES[code]
@@ -16,8 +18,6 @@ module SmsManager
         'Neznámý chybový kód'
       end
     end
-
-    private
 
     CODES = {
       101 => 'Neexistující data požadavku (chybí XMLDATA parametr u XML API)',
