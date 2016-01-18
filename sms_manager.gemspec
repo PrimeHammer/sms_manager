@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{SmsManager is a Ruby library for sending SMS messages by smsmanager.cz provider}
   gem.homepage      = "https://github.com/PrimeHammer/sms_manager"
   gem.required_ruby_version = '>= 2.0'
-  gem.add_dependency  "httpclient", "~> 2.7.0"
+  gem.add_dependency  "httpclient", "~> 2.5"
   gem.add_development_dependency "bundler"
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
