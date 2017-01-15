@@ -1,10 +1,10 @@
 # SmsManager
 
 [![Gem Version](https://badge.fury.io/rb/sms_manager.png)](http://badge.fury.io/rb/sms_manager)
-[![Build Status](https://travis-ci.org/dayweek/sms_manager.png?branch=master)](https://travis-ci.org/dayweek/sms_manager)
-[![Dependency Status](https://gemnasium.com/dayweek/sms_manager.png)](https://gemnasium.com/dayweek/sms_manager)
-[![Code Climate](https://codeclimate.com/github/dayweek/sms_manager.png)](https://codeclimate.com/github/dayweek/sms_manager)
-[![Coverage Status](https://coveralls.io/repos/dayweek/sms_manager/badge.svg?branch=master&service=github)](https://coveralls.io/github/dayweek/sms_manager?branch=master)
+[![Build Status](https://travis-ci.org/PrimeHammer/sms_manager.png?branch=master)](https://travis-ci.org/PrimeHammer/sms_manager)
+[![Dependency Status](https://gemnasium.com/PrimeHammer/sms_manager.png)](https://gemnasium.com/PrimeHammer/sms_manager)
+[![Code Climate](https://codeclimate.com/github/PrimeHammer/sms_manager.png)](https://codeclimate.com/github/PrimeHammer/sms_manager)
+[![Coverage Status](https://coveralls.io/repos/PrimeHammer/sms_manager/badge.svg?branch=master&service=github)](https://coveralls.io/github/PrimeHammer/sms_manager?branch=master)
 
 A Ruby SDK for [smsmanager.cz](http://smsmanager.cz/) - Czech SMS provider.
 
