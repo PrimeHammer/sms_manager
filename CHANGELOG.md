@@ -23,3 +23,7 @@ rescue SmsManager::Error => e
   puts e.message # => Neplatný parametr gateway
 end
 ```
+
+0.3.2
+-----
+* Update dependencies
