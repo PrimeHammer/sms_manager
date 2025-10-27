@@ -2,6 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/sms_manager.png)](http://badge.fury.io/rb/sms_manager)
 
+[![Build Status](https://github.com/PrimeHammer/sms_manager/actions/workflows/build.yml/badge.svg)](https://github.com/PrimeHammer/sms_manager/actions)
 
 A Ruby SDK for [smsmanager.cz](http://smsmanager.cz/) - Czech SMS provider.
 
