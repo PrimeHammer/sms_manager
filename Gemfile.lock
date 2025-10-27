@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    sms_manager (0.3.3)
-      httpclient (~> 2.8)
+    sms_manager (0.4.0)
+      httpclient (>= 2.8)
 
 GEM
   remote: https://rubygems.org/

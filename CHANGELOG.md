@@ -31,3 +31,8 @@ end
 0.3.3
 -----
 * Update dependencies
+0.4.0
+-----
+* Support only ruby >= 3.2
+* Drop support for JRuby - could not setup CI for it
+* Update dependencies
