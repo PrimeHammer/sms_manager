@@ -44,7 +44,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  crack (~> 0.4.3)
   rake
   rspec
   sms_manager!
