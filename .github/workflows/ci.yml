@@ -16,9 +16,6 @@ jobs:
           - '3.3'
           - head
           - jruby
-        include:
-          - ruby: head
-            continue-on-error: true
 
     name: Ruby ${{ matrix.ruby }}
 
