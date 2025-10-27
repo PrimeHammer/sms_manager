@@ -43,6 +43,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bigdecimal
   bundler
   rake
   rspec
