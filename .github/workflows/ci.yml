@@ -24,12 +24,11 @@ jobs:
       JRUBY_OPTS: "--debug"
     steps:
 
-    - name: prepare java environment for jruby
-      if: matrix.ruby == 'jruby-head'
-      run: |
-        apt-get install -y openjdk-21-jdk
-        java -version
     - uses: actions/checkout@v5
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'temurin' # See 'Supported distributions' for available options
+        java-version: '21'
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
