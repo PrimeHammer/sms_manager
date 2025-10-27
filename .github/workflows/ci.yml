@@ -9,8 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container:
-      image: ubuntu:24.04
     strategy:
       fail-fast: false
       matrix:
@@ -19,40 +17,13 @@ jobs:
           - '3.3'
           - '3.4'
           - head
-          - jruby-head
 
     name: Ruby ${{ matrix.ruby }}
-    env:
-      JRUBY_OPTS: "--debug"
     steps:
-      - name: Make dir home exist
-        run: |
-          mkdir -p ${HOME}
-      - name: Install Apt Packages needed for setup-ruby
-        run: |
-          apt update
-          apt-get install -y --no-install-recommends \
-            build-essential \
-            ca-certificates \
-            cmake \
-            curl \
-            git \
-            libffi-dev \
-            libyaml-dev \
-            libreadline-dev \
-            libssl-dev \
-            openssl \
-            zlib1g-dev \
-            libcurl4-openssl-dev
-      - name: prepare java environment for jruby
-        if: matrix.ruby == 'jruby-head'
-        run: |
-          apt-get install -y openjdk-21-jdk
-          java -version
       - uses: actions/checkout@v5
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - run: bundle install
+
       - run: bundle exec rake
