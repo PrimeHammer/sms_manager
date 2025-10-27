@@ -16,6 +16,7 @@ GEM
     httpclient (2.8.3)
     public_suffix (2.0.5)
     rake (12.3.2)
+    rexml (3.4.4)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
@@ -41,6 +42,7 @@ PLATFORMS
 DEPENDENCIES
   bundler
   rake
+  rexml
   rspec
   sms_manager!
   webmock
