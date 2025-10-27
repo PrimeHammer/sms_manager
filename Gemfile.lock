@@ -64,5 +64,3 @@ DEPENDENCIES
   sms_manager!
   webmock
 
-BUNDLED WITH
-   1.16.6
