@@ -4,9 +4,7 @@ gem "rake"
 gem "rspec"
 gem "webmock"
 
-# bigdecimal and crack fail to compile on JRuby
-gem "bigdecimal", platforms: :ruby
-gem "crack", platforms: :ruby
+# Pin to a version before crack added bigdecimal as a dependency. bigdecimal is part of jruby and cannot be built
+gem "crack", "~> 0.4.3"
 
-# Specify your gem's dependencies in gemspec
 gemspec
