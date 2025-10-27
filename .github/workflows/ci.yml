@@ -13,9 +13,11 @@ jobs:
       fail-fast: false
       matrix:
         ruby:
+          - '3.2'
           - '3.3'
+          - '3.4'
           - head
-          - jruby
+          - jruby-9.4.10.0
 
     name: Ruby ${{ matrix.ruby }}
 
