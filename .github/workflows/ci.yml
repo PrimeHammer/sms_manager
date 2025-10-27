@@ -19,7 +19,7 @@ jobs:
           - '3.3'
           - '3.4'
           - head
-          - jruby-10.0.2
+          - jruby-head
 
     name: Ruby ${{ matrix.ruby }}
     env:
