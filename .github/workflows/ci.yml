@@ -9,6 +9,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    container:
+      image: ubuntu:24.04
     strategy:
       fail-fast: false
       matrix:
@@ -20,8 +22,15 @@ jobs:
           - jruby-10.0.2
 
     name: Ruby ${{ matrix.ruby }}
-
+    env:
+      JRUBY_OPTS: "--debug"
     steps:
+
+    - name: prepare java environment for jruby
+      if: matrix.ruby == 'jruby-head'
+      run: |
+        apt-get install -y openjdk-21-jdk
+        java -version
     - uses: actions/checkout@v5
     - uses: ruby/setup-ruby@v1
       with:
