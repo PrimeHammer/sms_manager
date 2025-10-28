@@ -2,17 +2,13 @@
 
 [![Gem Version](https://badge.fury.io/rb/sms_manager.png)](http://badge.fury.io/rb/sms_manager)
 
-[![Build Status](https://github.com/PrimeHammer/sms_manager/actions/workflows/build.yml/badge.svg)](https://github.com/PrimeHammer/sms_manager/actions)
+[![Build Status](https://github.com/PrimeHammer/sms_manager/actions/workflows/ci.yml/badge.svg)](https://github.com/PrimeHammer/sms_manager/actions)
 
-A Ruby SDK for [smsmanager.cz](http://smsmanager.cz/) - Czech SMS provider.
+A Ruby SDK for [smsmanager.cz](http://smsmanager.cz/) - Czech SMS provider. Supports SMS sending and error handling. Uses legacy endpoint.
 
 ## Installation
 
-`gem install sms_manager`
-
-Or add to Gemfile:
-
-`gem 'sms_manager'`
+`bundle add sms_manager`
 
 ## Usage
 
@@ -54,9 +50,8 @@ rescue SmsManager::Error => e
 end
 ```
 
-## Copyright
+## Changelog & License
 
-Copyright (c) 2013 David Hrachovy
-See [LICENSE][] for details.
+See [CHANGELOG][] and [LICENSE][] for details.
 
-[license]: LICENSE.md
+
