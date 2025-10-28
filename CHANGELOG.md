@@ -31,3 +31,9 @@ end
 0.3.3
 -----
 * Update dependencies
+
+0.4.0
+-----
+* Support only Ruby >= 3.2
+* Drop support for JRuby, Rubinius
+* Update dependencies
