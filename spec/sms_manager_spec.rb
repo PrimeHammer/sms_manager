@@ -31,7 +31,7 @@ describe SmsManager do
 
       expect { SmsManager.send number: '+420123456789', message: 'Hello!' }.to \
         raise_error(SmsManager::Error) do |e|
-          expect(e.message).to eq('Neplatné uživatelské jméno nebo heslo')
+          expect(e.message).to eq('Neplatné uživatelské jméno nebo heslo (103)')
         end
     end
 
@@ -65,7 +65,7 @@ describe SmsManager do
 
       expect { SmsManager.send_message number: '+420123456789', message: 'Hello!' }.to \
         raise_error(SmsManager::Error) do |e|
-          expect(e.message).to eq('Neplatné uživatelské jméno nebo heslo')
+          expect(e.message).to eq('Neplatné uživatelské jméno nebo heslo (103)')
         end
     end
 
