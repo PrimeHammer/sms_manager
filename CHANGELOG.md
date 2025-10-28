@@ -37,3 +37,7 @@ end
 * Support only Ruby >= 3.2
 * Drop support for JRuby, Rubinius
 * Update dependencies
+
+0.5.0
+-----
+* Add code to the error message
