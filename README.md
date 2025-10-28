@@ -52,6 +52,6 @@ end
 
 ## Changelog & License
 
-See [CHANGELOG][] and [LICENSE][] for details.
+See [CHANGELOG](CHANGELOG.md) and [LICENSE](LICENSE.md) for details.
 
 
